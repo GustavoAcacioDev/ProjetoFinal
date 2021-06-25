@@ -1,0 +1,57 @@
+<Layout>
+      <section className="container">
+
+        <div className="listOfUsers">
+
+
+          {
+            user.users.length > 0 ?
+            user.users.map(user => {
+              return (
+                <User 
+                  onClick={initChat}
+                  key={user.uid} 
+                  user={user} 
+                  />
+              );
+            }) : null
+          }
+
+            
+                    
+        </div>
+
+        <div className="chatArea">
+            
+            <div className="chatHeader"> 
+            {
+              chatStarted ? chatUser : ''
+            }
+            </div>
+            <div className="messageSections">
+                {
+                  chatStarted ? 
+                  user.conversations.map(con =>
+                    <div style={{ textAlign: con.user_uid_1 == auth.uid ? 'right' : 'left' }}>
+                    <p className="messageStyle" >{con.message}</p>
+                  </div> )
+                  : null
+                }
+                
+
+            </div>
+            {
+              chatStarted ? 
+              <div className="chatControls">
+                <textarea 
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Write Message"
+                />
+                <button onClick={submitMessage}>Send</button>
+            </div> : null
+            }
+            
+        </div>
+    </section>
+  </Layout>

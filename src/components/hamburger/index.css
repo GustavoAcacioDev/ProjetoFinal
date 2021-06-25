@@ -1,0 +1,38 @@
+@media(max-width: 900px){
+
+img.botaomenu {
+    width: 3em;
+}
+
+.botaomenu1{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+a#menu {
+    color: orange;
+    margin-top: 10%;
+}
+
+
+ul.MuiList-root-70.MuiList-padding-71 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1em;
+    /* background-color: orange; */
+}
+
+ul.MuiList-root.MuiMenu-list.MuiList-padding {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #192026;
+margin: 1;
+padding:1;
+}
+
+}
+
+

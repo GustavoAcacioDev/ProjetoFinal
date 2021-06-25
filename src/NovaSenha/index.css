@@ -1,0 +1,96 @@
+.FundoNovaSenha{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: grayscale(.5);
+ }
+
+
+ .paiNovaSenha{
+
+    position: relative;
+    width: 22vw;
+    height: 60vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    margin-top: 7.4%;
+
+ }
+
+ .TudoNovaSenha{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+ }
+
+ .tituloSenha{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Libre Baskerville', serif, bold;
+    margin-bottom: 5%;
+ }
+
+
+
+ .botao-enviar{
+    height: 5vh ;
+    width:  22vw ;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FF8C00;
+    color: white;
+    border-radius: 6px;
+    border : none;
+    box-shadow: 0px 0px 2px 1px #FF8C00;
+    margin-top: 9.6%;
+ }
+
+ .formNovaSenha{
+
+
+    /* padding: 0px 0px 0px 1px; */
+    letter-spacing: 1px;
+    background: transparent;
+    border-bottom:black 0.2px solid; 
+    outline: none;
+    font-size: 14px;
+    height: 50px;
+
+ }
+
+
+ .formNovaSenha3{
+    margin-top: 5%;
+    width: 20vw;
+    height: 100%;
+    padding: 0px 0px 0px 1px;
+    letter-spacing: 1px;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    margin-left: 2%;
+    height: 4vh;
+    border: none;
+ }
+
+
+ textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}

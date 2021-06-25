@@ -1,0 +1,79 @@
+.TudoLogin{
+
+    position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+
+}
+
+.FundoLogin{
+    display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+ 
+}
+
+.paiLogin{
+    position: relative;
+    width: 22vw;
+    height: 60vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    margin-top: 7.4%;
+}
+
+
+
+.tituloLogin{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Libre Baskerville', serif, bold;
+    margin-bottom: 5%;
+}
+
+.emailLogin{
+  width:  20vw ;
+  height: 5vh;
+}
+
+.senhaLogin{
+  width:  20vw ;
+  height: 5vh;
+}
+.botaologar{
+  height: 5vh ;
+    width:  20vw ;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FF8C00;
+    color: white;
+    border-radius: 6px;
+    border : none;
+    box-shadow: 0px 0px 2px 1px #FF8C00;
+    margin-top: 15%;
+
+}
+
+
+input:-webkit-autofill 
+{
+    -webkit-box-shadow: 0 0 0px 1000px #f9fbfd inset !important;
+    -webkit-text-fill-color: #4D90FE !important;
+}

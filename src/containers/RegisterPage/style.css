@@ -1,0 +1,150 @@
+.paiCadastro{
+    display: flex; 
+    justify-Content: space-between;
+     height: 100vh;
+}
+
+
+.containerCadastro{
+    width: 100vw; 
+    display: flex; 
+    align-Items: center;
+    justify-content: center;
+}
+
+.formularioCadastro{
+    width: 40vw;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0px 0px 20px 9px #8d8f8f79; 
+}
+
+.tituloCadastro{
+    font-Family: Radley; 
+    font-Size: 60px; 
+    margin : auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.botaoCadastro{
+    display: flex; 
+    justify-Content: center;
+}
+
+.botao-cadastrarCadastro{
+        height: 50px;
+        width: 250px;
+        font-Size: 30px;
+        font-Family: Inria Sans;
+        background-Color: #FF8C00;
+        color: white;
+        border-Radius: 6px;
+        margin-Top: 50px;
+        border-Color: #FF8C00;
+}
+
+.nomeCadastro{
+    height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+
+.emailCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+
+.senhaCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+
+.telefoneCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+
+.especificacaoCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+
+.cpfCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+.horaInicioCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+.horaTerminoCadastro{
+   height: 3em;
+   width: 20vw;
+   border: none;
+   border-bottom : 1px solid gray;
+   padding: 0px 0px 0px 10px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+}
+
+.conjuntoCadastro{
+    display: flex;
+}

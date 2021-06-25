@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 900px) {
+    .textinho {
+        color: grey;
+    }
+    .teste {
+        min-width: 300px;
+        margin: 2px, -2px, 3px;
+        width: 100%;
+        min-height: 400px;
+        background-color: violet;
+    }
+    .windows.WebChat.createStyleSet {
+        flex: 1 1 0%;
+        background-color: greenyellow;
+    }
+    .bot {
+        border-radius: 250px;
+        position: absolute;
+        top: 50%;
+        width: 5em;
+        height: 5em;
+    }
+    .imgB {
+        width: 5em;
+        height: 5em;
+    }
+    .quemSomos {
+        width: 100%;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .coletividade {
+        width: 8em;
+        height: 8em;
+    }
+    .textinho p {
+        font-size: 10px;
+    }
+    .textinho h1 {
+        font-size: 14px;
+    }
+    .textinho {
+        color: grey;
+        font-family: 'Libre Baskerville', serif;
+        text-align: right;
+        width: 12em;
+    }
+    img.inte {
+        width: 5em;
+    }
+    #linkedin {
+        display: flex;
+        justify-content: center;
+    }
+    img.media-object.img-responsive.img-thumbnail {
+        width: 2em;
+        margin-top: 3%;
+    }
+    div#Quemsomos {
+        height: 11em;
+    }
+    .grupo1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 5%;
+    }
+    .grupo2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    #Integrantes {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 10px;
+        margin-top: 4%;
+        text-align: center;
+    }
+    .divimg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .logoRodape {
+        width: 6em;
+        height: 4em;
+    }
+    .hezinho {
+        margin-top: 2%;
+    }
+    .Rodape {
+        margin-top: 5%;
+    }
+
+ #home {
+        height: 100%;
+        font-family: 'Libre Baskerville', serif;
+    }
+    #Quemsomos {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (min-width: 900px) {
+    .caixaTexto {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 20px;
+    }
+    img.media-object.img-responsive.img-thumbnail {
+        margin-top: 10px;
+    }
+    #home {
+        height: 100%;
+        font-family: 'Libre Baskerville', serif;
+    }
+    #Quemsomos {
+        height: 100%;
+        width: 100%;
+    }
+   
+    .quemSomos {
+        width: 100%;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .coletividade {
+        width: 35%;
+        height: 35%;
+    }
+    .textinho p {
+        margin-top: 10%;
+    }
+    .textinho {
+        color: grey;
+        font-size: 25px;
+        font-family: 'Libre Baskerville', serif;
+        text-align: right;
+        width: 25%;
+    }
+    .teste {
+        min-width: 300px;
+        margin: 2px, -2px, 3px;
+        width: 100%;
+        min-height: 400px;
+    }
+    .imgB {
+        width: 80px;
+        height: 80px;
+    }
+    div#popup-2 {
+        width: 0;
+    }
+    .botão {
+        width: 100%;
+        height: 5%;
+        position: fixed;
+    }
+    .bot {
+        border-radius: 250px;
+        position: fixed;
+        top: 50%;
+    }
+    #Integrantes {
+        font-family: 'Libre Baskerville', serif;
+    }
+    #Integrantes h1 {
+        text-align: center;
+        margin: 1em;
+        font-size: 50px;
+    }
+    .hezinho {
+        margin: 0.5em;
+    }
+    img.inte {
+        width: 15em;
+    }
+    .inte p {
+        align-items: center;  
+        font-size: 25px;
+    }
+    img.media-object.img-responsive.img-thumbnail {
+        width: 2em;
+        justify-content: center;
+    }
+    .grupo1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .grupo2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .divimg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .Rodape {
+        margin: 2em;
+    }
+    .logoRodape {
+        margin: 1em;
+        width: 10em;
+        height: 8em;
+    }
+    .container {
+        display: block;
+        position: initial;
+        width: 100%;
+        height: calc(100% - 60px);
+        overflow: hidden;
+    }
+}
