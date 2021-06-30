@@ -108,7 +108,7 @@ const PerfilAtendente = (props) => {
 
                                         <button style={{ width: '250px', borderRadius: '6px', fontSize: '20px', border: 'none', boxShadow: '0px 0px 2px 1px #FF8C00', background: 'transparent', backgroundColor: '#FF8C00', color: 'white', fontFamily: 'Arial, Helvetica, sans-serif', border: 'none', cursor: 'pointer', marginLeft: '20px'}} type="primary">
 
-                                            <Link style={{ textDecoration: 'none', color: 'white' }} to={"/redefinirSenha"}>
+                                            <Link style={{ textDecoration: 'none', color: 'white' }} to={"/redefinir"}>
                                                 Editar Senha
                                             </Link>
                                         </button>

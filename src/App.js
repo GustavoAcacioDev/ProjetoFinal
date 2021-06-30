@@ -43,7 +43,7 @@ function App() {
           <Route path="/signupCliente" component={RegisterClientePage} />
           <PrivateRoute path="/signup" component={RegisterPage} />
           <Route path="/redefinir" component={RedefinirSenha} />
-          <Route path="/novaSenha" component={NovaSenha} />
+          <PrivateRoute path="/novaSenha" component={NovaSenha} />
         </Router>
       </div>
     </ModalProvider>

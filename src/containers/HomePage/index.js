@@ -12,7 +12,6 @@ const User = (props) => {
 
    
   const { user, onClick } = props;
-
   return (
     <div onClick={() => onClick(user)} className="displayName">
       <div className="displayPic">
@@ -83,17 +82,7 @@ const HomePage = (props) => {
     dispatch(getRealtimeConversations({ uid_1: auth.uid, uid_2: user.uid }));
 
   }
-  const initChamados = (chamado) => {
-
-    setChatStarted(true)
-    setProblema(`${ user.problemObject}`)
-    setProblemaUid(user.uid)
-
-    console.log(chamado);
-
-    dispatch(getRealtimeConversations({ uid_1: auth.uid, uid_2: user.uid }));
-
-  }
+  
   
 
   const submitMessage = (e) => {
