@@ -26,27 +26,33 @@ export const Chamados = (problemObject) => {
         auth()
 
         const currentUser = auth().currentUser;
-            db.collection('Chamados')
-                .add({
+        db.collection('Chamados')
+            .add({
+                ...problemObject,
+                user_uid_1: currentUser.uid
+            })
+            .then(() => {
+                const chamado = {
                     ...problemObject,
                     user_uid_1: currentUser.uid
-                })
-                .then(() => {
-                    dispatch({
-                        type: `${problemConstants.USER_PROBLEM}_SUCCESS`,
-                        payload: { user: problemObject }
-                    })
-                })
-                .catch(error => {
-                    console.log(error);
-                    dispatch({
-                        type: `${problemConstants.USER_PROBLEM}_FAILURE`,
-                        payload: { error }
-                    });
-                })
+                }
+                localStorage.setItem('chamados', JSON.stringify(chamado));
 
-                .catch(error => {
-            console.log(error);
-        })
+                dispatch({
+                    type: `${problemConstants.USER_PROBLEM}_SUCCESS`,
+                    payload: { user: problemObject }
+                })
+            })
+            .catch(error => {
+                console.log(error);
+                dispatch({
+                    type: `${problemConstants.USER_PROBLEM}_FAILURE`,
+                    payload: { error }
+                });
+            })
+
+            .catch(error => {
+                console.log(error);
+            })
     }
 }

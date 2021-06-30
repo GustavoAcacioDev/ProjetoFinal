@@ -33,7 +33,7 @@ export const signUpCliente = (user) => {
                     displayName: infos
                 })
                     .then(() => {
-                        db.collection('users')
+                        db.collection('users').doc('tipoUsuario').collection('userComum')
                             .add({
                                 cpf: user.cpf,
                                 uid: data.user.uid,

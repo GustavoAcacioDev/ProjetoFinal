@@ -78,7 +78,7 @@ const RegisterPage = (props) => {
             <div style={{ marginRight: '20px' }}>
 
               <Form.Group controlId="formBasicEmail">
-                <input type="email" className="emailCadastro" placeholder="Email" name='email' x required />
+                <input type="email" className="emailCadastro" placeholder="Email" name='email' defaultValue={email} onChange={(e) => setEmail(e.target.value)} required />
               </Form.Group>
             </div>
 

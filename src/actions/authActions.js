@@ -27,7 +27,7 @@ export const signInCliente = (user) => {
 
                 const db = firestore();
 
-                db.collection('users')
+                db.collection('users').doc('tipoUsuario').collection('userComum')
                     .doc(data.user.uid)
                     .get()
                     .then((doc) => {

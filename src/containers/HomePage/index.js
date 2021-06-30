@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './../HomePage/index.css';
 import Menu from '../../components/Menu/index';
 import { useDispatch, useSelector } from 'react-redux';
-import { ChatSquareDots,PersonBoundingBox, PersonCircle, Cursor } from 'react-bootstrap-icons';
-import { getRealtimeUsers, updateMessage, getRealtimeConversations } from '../../actions';
+import { ChatSquareDots, PersonBoundingBox, PersonCircle, Cursor } from 'react-bootstrap-icons';
+import { getRealtimeUsers, updateMessage, getRealtimeConversations, getRealtimeChamados } from '../../actions';
 
+import Chat3 from '../../screens/atendimento3/Chat3';
 
 const User = (props) => {
 
 
+   
   const { user, onClick } = props;
 
   return (
@@ -17,7 +19,7 @@ const User = (props) => {
         <PersonCircle className="pic1" size={40} />
       </div>
       <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', margin: '0 10px' }}>
-        <span style={{ fontWeight: 500 }}>{user.firstName} {user.lastName} - {user.problema}</span>
+        <span style={{ fontWeight: 500 }}>{user.nome}</span>
         <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}></span>
       </div>
     </div>
@@ -30,12 +32,18 @@ const HomePage = (props) => {
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth);
   const user = useSelector(state => state.user);
+
   const [chatStarted, setChatStarted] = useState(false);
   const [chatUser, setChatUser] = useState('');
   const [cpf, setCpf] = useState('');
+
+  const [problema, setProblema] = useState('');
+  const [problemaUid, setProblemaUid] = useState(null);
+
   const [message, setMessage] = useState('');
   const [userUid, setUserUid] = useState(null);
   let unsubscribe;
+  let unsubscribe2;
 
   useEffect(() => {
 
@@ -47,13 +55,12 @@ const HomePage = (props) => {
         console.log(error);
       })
 
-      
-
-
   }, []);
 
-  //console.log(user);
+  
 
+  //console.log(user);
+  
   //componentWillUnmount
   useEffect(() => {
     return () => {
@@ -67,7 +74,7 @@ const HomePage = (props) => {
   const initChat = (user) => {
 
     setChatStarted(true)
-    setChatUser(`${user.firstName} ${user.lastName}`)
+    setChatUser(`${user.nome}`)
     setCpf(`${user.cpf}`)
     setUserUid(user.uid);
 
@@ -76,6 +83,18 @@ const HomePage = (props) => {
     dispatch(getRealtimeConversations({ uid_1: auth.uid, uid_2: user.uid }));
 
   }
+  const initChamados = (chamado) => {
+
+    setChatStarted(true)
+    setProblema(`${ user.problemObject}`)
+    setProblemaUid(user.uid)
+
+    console.log(chamado);
+
+    dispatch(getRealtimeConversations({ uid_1: auth.uid, uid_2: user.uid }));
+
+  }
+  
 
   const submitMessage = (e) => {
 
@@ -97,7 +116,7 @@ const HomePage = (props) => {
 
   }
 
-
+  console.log(user)
   return (
 
     <div className="ContainerPrincipal" >
@@ -107,6 +126,7 @@ const HomePage = (props) => {
       <div className="Container1">
         <div className="Titulo">
           <p className='titulo'>Atendimento </p>
+          <button ></button>
         </div>
         <hr />
         <div className="Container2">
@@ -126,7 +146,7 @@ const HomePage = (props) => {
                         key={user.uid}
                         user={user}
                       />
-                      
+
 
                     );
                   }) : null
@@ -152,19 +172,11 @@ const HomePage = (props) => {
 
               {
                 chatStarted ?
-                  <div className="messageSections" >
-                    {
-                      chatStarted ?
-                        user.conversations.map(con =>
-                          <div style={{ textAlign: con.user_uid_1 === auth.uid ? 'right' : 'left' }}>
-                            <p className="messageStyle" >{con.message}</p>
-                          </div>)
-                        : null
-                    }
-                    
-                  </div> : null
+                user.conversations.map(con =>
+                  <div style={{ textAlign: con.user_uid_1 === auth.uid ? 'right' : 'left' }}>
+                    <p className="messageStyle" >{con.message}</p>
+                  </div>): null
               }
-            <hr />
 
             </div>
             {
@@ -176,7 +188,7 @@ const HomePage = (props) => {
                     type="text"
                   >
                   </input>
-                  <button onClick={submitMessage} style={{border: 'none', backgroundColor: '#f5f6f8'}}><Cursor  className="enviar" color="#FF8C00" size={38}/></button>
+                  <button onClick={submitMessage} style={{border: 'none', backgroundColor: '#f5f6f8', cursor: 'pointer'}}><Cursor  className="enviar" color="#FF8C00" size={38}/></button>
                 </div> : null
             }
           </div>

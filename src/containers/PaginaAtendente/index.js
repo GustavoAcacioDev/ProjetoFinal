@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { } from 'react-bootstrap';
 import firebase, { auth, firestore } from 'firebase';
+
+import { Link } from 'react-router-dom';
 import { MdPerson } from 'react-icons/md'
 import './index.css';
 import Menu from '../../components/Menu/index';
-import { PersonCircle, Clock, Chat } from 'react-bootstrap-icons';
-import { useDispatch, useSelector } from 'react-redux';
-import jwt_decode from "jwt-decode";
-import { listagemUsuarios, getRealtimeUsers, getYourUser } from '../../actions';
+import { Clock, Chat, Pencil } from 'react-bootstrap-icons';
+import { useDispatch } from 'react-redux';
+
+import { useModalContext } from '../../modal.context';
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Modal from '../../components/Modal/Modal';
+import Modal2 from '../../components/Modal/Modal2';
 
 
 const PerfilAtendente = (props) => {
 
     const dispatch = useDispatch();
-    const auth = firebase.auth();
     const [chatStarted, setChatStarted] = useState(false);
     const [chatUser, setChatUser] = useState('');
     const [cpf, setCpf] = useState('');
@@ -24,15 +27,21 @@ const PerfilAtendente = (props) => {
     const [userUid, setUserUid] = useState(null);
     let unsubscribe;
 
+    const auth = () => {
+        return (
+            firebase.auth()
+        )
+    }
 
-
+    const { openModal } = useModalContext();
+    const testModal = () => openModal({ message: `Ola ${user.firstName} ${user.lastName}` });
 
 
     /*const [user] = useAuthState(auth);*/
 
     const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
-    console.log(user)
+
 
 
     return (
@@ -55,7 +64,7 @@ const PerfilAtendente = (props) => {
 
                             <div style={{ width: '80%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
 
-                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', borderBottom: 'solid 1px black' }} >
+                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', borderBottom: 'solid 1px rgba(0, 0, 0, 0.486)' }} >
                                     <div>
                                         <MdPerson size={50} />
                                     </div>
@@ -74,19 +83,39 @@ const PerfilAtendente = (props) => {
                                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', width: '90%', marginTop: '25px' }}>
                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                         <h2 style={{ fontFamily: 'Times New Roman' }}>
-                                            Nome: 
+                                            Nome:
                                         </h2>
-                                        <p style={{ marginLeft: '5px', fontSize: '20px' }}>
+                                        <p style={{ marginLeft: '5px', fontSize: '20px', marginTop: '5px' }}>
                                             {user.firstName} {user.lastName}
                                         </p>
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
                                         <h2 style={{ fontFamily: 'Times New Roman' }}>
-                                            Email: 
+                                            Email:
                                         </h2>
                                         <p style={{ marginLeft: '5px', fontSize: '20px' }}>
                                             {user.email}
+
                                         </p>
+
+                                    </div>
+                                    <div style={{display: 'flex'}}>
+                                        <button style={{ width: '250px', borderRadius: '6px', fontSize: '20px', border: 'none', boxShadow: '0px 0px 2px 1px #FF8C00', background: 'transparent', backgroundColor: '#FF8C00', color: 'white', fontFamily: 'Arial, Helvetica, sans-serif', border: 'none', cursor: 'pointer' }} onClick={testModal} type="primary">
+                                            <Modal2 />
+                                            Editar Informações
+                                            <Pencil style={{ marginLeft: '15px' }} />
+                                        </button>
+
+                                        <button style={{ width: '250px', borderRadius: '6px', fontSize: '20px', border: 'none', boxShadow: '0px 0px 2px 1px #FF8C00', background: 'transparent', backgroundColor: '#FF8C00', color: 'white', fontFamily: 'Arial, Helvetica, sans-serif', border: 'none', cursor: 'pointer', marginLeft: '20px'}} type="primary">
+
+                                            <Link style={{ textDecoration: 'none', color: 'white' }} to={"/redefinirSenha"}>
+                                                Editar Senha
+                                            </Link>
+                                        </button>
+                                        
+                                    </div>
+                                    <div>
+
                                     </div>
                                 </div>
                             </div>
@@ -103,67 +132,67 @@ const PerfilAtendente = (props) => {
 
                         <div style={{ height: "48vh", width: "80vw", backgroundColor: "white", borderRadius: "22px", marginTop: '100px', display: 'flex', justifyContent: 'center' }}>
 
-                            <div style={{width: '80%', height: '100%' }}>
-                                <div style={{width: '100%', height: '25%', display: 'flex', alignItems: 'center' }}>
-                                
+                            <div style={{ width: '80%', height: '100%' }}>
+                                <div style={{ width: '100%', height: '25%', display: 'flex', alignItems: 'center' }}>
+
                                     <Chat style={{ marginTop: "1%" }} className='all' color="black" filter="invert(.4)" size={40} />
-                                    <p style={{ fontSize: "20px", marginLeft: "1%", marginTop:'10px' }}>Chamados</p>
+                                    <p style={{ fontSize: "20px", marginLeft: "1%", marginTop: '10px' }}>Chamados</p>
                                 </div>
-                                
-                                <div style={{width: '100%', height: '10%', backgroundColor: '#F4F4F4', display: 'flex', }}>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', alignItems: 'center'}}>
-                                        <h3 style={{marginLeft: '30px'}} >Titulo</h3>
+
+                                <div style={{ width: '100%', height: '10%', backgroundColor: '#F4F4F4', display: 'flex', }}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center' }}>
+                                        <h3 style={{ marginLeft: '30px' }} >Titulo</h3>
                                     </div>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <h3>Cliente</h3>
-                                        <h3 style={{marginRight: '20px'}}>Data</h3>
+                                        <h3 style={{ marginRight: '20px' }}>Data</h3>
                                     </div>
                                 </div>
-                                
-                                
-                                <div style={{width: '100%', height: '10%', display: 'flex',marginTop: '20px' }}>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', alignItems: 'center'}}>
-                                        <h3 style={{marginLeft: '30px'}} >Problemas com conta</h3>
+
+
+                                <div style={{ width: '100%', height: '10%', display: 'flex', marginTop: '20px' }}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center' }}>
+                                        <h3 style={{ marginLeft: '30px' }} >Problemas com conta</h3>
                                     </div>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <p>{user.firstName}</p>
                                         <p>20/01/2021</p>
                                     </div>
                                 </div>
                                 <hr />
-                                
-                                <div style={{width: '100%', height: '10%', display: 'flex',marginTop: '20px' }}>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', alignItems: 'center'}}>
-                                        <h3 style={{marginLeft: '30px'}} >Problemas com conta</h3>
+
+                                <div style={{ width: '100%', height: '10%', display: 'flex', marginTop: '20px' }}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center' }}>
+                                        <h3 style={{ marginLeft: '30px' }} >Problemas com conta</h3>
                                     </div>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <p>{user.firstName}</p>
                                         <p>20/01/2021</p>
                                     </div>
                                 </div>
                                 <hr />
-                                
-                                <div style={{width: '100%', height: '10%', display: 'flex',marginTop: '20px' }}>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', alignItems: 'center'}}>
-                                        <h3 style={{marginLeft: '30px'}} >Problemas com conta</h3>
+
+                                <div style={{ width: '100%', height: '10%', display: 'flex', marginTop: '20px' }}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center' }}>
+                                        <h3 style={{ marginLeft: '30px' }} >Problemas com conta</h3>
                                     </div>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <p>{user.firstName}</p>
                                         <p>20/01/2021</p>
                                     </div>
                                 </div>
                                 <hr />
-                                
-                                <div style={{width: '100%', height: '10%', display: 'flex',marginTop: '20px' }}>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', alignItems: 'center'}}>
-                                        <h3 style={{marginLeft: '30px'}} >Problemas com conta</h3>
+
+                                <div style={{ width: '100%', height: '10%', display: 'flex', marginTop: '20px' }}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center' }}>
+                                        <h3 style={{ marginLeft: '30px' }} >Problemas com conta</h3>
                                     </div>
-                                    <div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                                    <div style={{ width: '50%', height: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <p>{user.firstName}</p>
                                         <p>20/01/2021</p>
                                     </div>
                                 </div>
-                                <hr/>
+                                <hr />
                             </div>
 
 
@@ -174,7 +203,7 @@ const PerfilAtendente = (props) => {
 
 
 
-                            
+
 
                         </div>
 

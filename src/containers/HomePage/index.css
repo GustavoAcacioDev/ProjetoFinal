@@ -36,19 +36,20 @@
 }
 
 .chatHeader p {
-    font-size: 45px;
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .chatControls {
     display: flex;
     position: fixed;
-    width: 66%;
-    height: 50px;
+    width: 65%;
+    height: 40px;
     bottom: 0;
     margin-left: 30px;
     margin-bottom: 10px;
 }
+
 
 .chatControls textarea {
     width: 90%;
@@ -83,7 +84,7 @@
 }
 
 .pic1{
-    color:rgba(0, 0, 0, 0.651);
+    color:#afafaf;
 }
 
 .displayName .displayPic img {
@@ -94,20 +95,26 @@
 
 .messageStyle {
     background: #b2b2b270;
-    display: inline-block;
+    display: flex;
+    height: 40px;
     padding: 5px 10px;
     border-radius: 10px;
     margin: 5px;
-    font-size: 20px;
+    font-size: 25px;
     display: inline-block;
+
+}
+.messageStyle p{
+
 }
 
 .messageSections {
-    height: 69%;
+    height: 100%;
     width: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
     top: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.486);
 }
 
 .onlineStatus {
@@ -143,10 +150,10 @@
 }
 
 .Historico {
-    width: 20%;
+    width: 26%;
     height: 100%;
     border-right: 1px solid rgba(0, 0, 0, 0.486);
-    background-color: rgba(204, 204, 204, 0.479);
+    background-color: rgba(178, 178, 178, 0.2);
 }
 
 .Titulo {
@@ -172,13 +179,13 @@
 
 .linha-horizontal {
     width: 200%;
-    border: 1px solid #000;
+    border: 1px solid rgba(0, 0, 0, 0.486);
     filter: invert(.9);
 }
 
 .linha-horizontal2 {
     width: 200%;
-    border: 1px solid #000;
+    border: 1px solid rgba(0, 0, 0, 0.486);
     filter: invert(.9);
 }
 
@@ -203,7 +210,7 @@
 }
 
 .vl {
-    border: 1px solid #000;
+    border: 1px solid rgba(0, 0, 0, 0.486);
     filter: invert(.9);
     height: 100%;
     position: absolute;
@@ -213,7 +220,7 @@
 }
 
 .vm {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.486);
     filter: invert(.9);
     height: 100%;
     position: absolute;
@@ -319,7 +326,7 @@
 }
 
 .mm2 {
-    color: rgba(2, 2, 2, 0.603)
+    color: rgba(0, 0, 0, 0.486)
 }
 
 .enviar{

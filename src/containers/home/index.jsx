@@ -1,48 +1,38 @@
-
-import React, { Component } from 'react';
-import { Jumbotron, Container } from 'react-bootstrap';
-import Menu from './../../components/menuSamanta/index';
-import Banner from '../../img/BannerDeVerdade.jpg';
-import './../home/index.css';
+import React from 'react';
+import Menu from './../../components/menuSamanta';
+import Banner from './../../img/Banner1.png';
+import './../home/home.css';
 
 //imagens
-import Imagem from './../../img/imagem.jpg';
-import Samanta from '../../img/Samanta.jpg';
-import Makoto from '../../img/Makoto.jpg';
-import Milena from '../../img/Milena.jpg';
-import Fusca from '../../img/Fusca.jpg';
-import Gustavo from '../../img/gustavo.jpg';
-import Henrique from '../../img/Henrique.jpg';
-import Eduardo from '../../img/eduardo.jpg';
-import banner2 from '../../img/Banner2.jpg'
-import bot from '../../img/bot.svg';
+import Imagem from './../../img/Trabalho.png';
+import Samanta from './../../img/Samanta.png';
+import Makoto from './../../img/Makoto.png';
+import Milena from './../../img/Milena.png';
+import Fusca from './../../img/Fusca.png';
+import Gustavo from './../../img/Gustavo.png';
+import Henrique from './../../img/Henrique.png';
+import Eduardo from './../../img/Eduardo.png';
+import banner2 from './../../img/Banner2.png'
 
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Libras from '././../../components/acessibilidade';
 
-
-class home extends Component {
-
-  render() {
-
-window.scrollTo(0,0)
-    return (
-      <Jumbotron>
+import ChatBot from './../../containers/bot';
 
 
-        <Libras />
+const home = () => {
+
+  return (
+    <div className="ContainerHome1">
+      <Libras />
 
 
-        <div className="botão">
-          <Popup trigger={<button className="bot" > <img className="imgB" src={bot} /></button>}>
+      <div className="botão">
+        <ChatBot />
+      </div>
 
-            <iframe src='https://webchat.botframework.com/embed/BRQ-CB2?s=Fa2gQbucQvM._zXo6WPQnTFfoRUjXuNK_yLMHnbyZS2TlBpB_lonIxU' className='teste'  > </iframe>
-
-          </Popup>
-        </div>
-
-        <Container style={{ color: '#fffff' }}>
+      <div>
+        <div style={{ color: '#fffff' }}>
           <div id="home">
             <div id="Home">
               <Menu />
@@ -52,9 +42,9 @@ window.scrollTo(0,0)
               </div>
             </div>
           </div>
-        </Container>
+        </div>
 
-        <Container id="Quemsomos">
+        <div id="Quemsomos">
           <div className='quemSomos'>
             <img className="coletividade" src={Imagem} />
             <div className="textinho" >
@@ -62,18 +52,19 @@ window.scrollTo(0,0)
               <p>
                 Com mais de 28 anos de experiência no mercado, somos uma das principais empresas de serviços e soluções de tecnologia no Brasil.
                 A nossa missão é construir jornadas de transformação com robustez e segurança, entrega de inovação, produtividade e valor para seguradoras, bancos, telecom, varejo, serviços e outras empresas líderes de mercado.
-            </p>
+              </p>
             </div>
           </div>
-        </Container>
+        </div>
 
-        <Container>
+
+        <div>
           <div id="Servicos" >
             <img style={{ width: '100%' }} src={banner2} />
           </div>
-        </Container>
+        </div>
 
-        <Container style={{ color: 'grey' }}>
+        <div style={{ color: 'grey' }}>
           <div id="Integrantes">
             <h1>Integrantes  <hr className='hezinho' /> </h1>
             <div>
@@ -155,15 +146,16 @@ window.scrollTo(0,0)
 
             </div>
           </div>
-                  
-        </Container>
+          
+        </div>
+      </div>
+    </div>
 
 
-      </Jumbotron>
 
-    )
 
-  }
+
+  )
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../components/menuSamanta/index.css'
+import '../../components/menuSamanta/menuSamanta.css'
 import { Navbar, Nav,  } from 'react-bootstrap';
 import Ham from './../hamburger';
 

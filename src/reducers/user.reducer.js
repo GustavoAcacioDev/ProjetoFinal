@@ -2,7 +2,8 @@ import { userConstants } from "../actions/constants"
 
 const intiState = {
     users: [],
-    conversations: []
+    conversations: [],
+    chamados: []
 }
 
 export default (state = intiState, action) => {
@@ -16,6 +17,7 @@ export default (state = intiState, action) => {
                 users: action.payload.users
             }
             break;
+
         case userConstants.GET_REALTIME_MESSAGES:
             state = {
                 ...state,
@@ -29,7 +31,7 @@ export default (state = intiState, action) => {
             }
             break;
 
-            
+
         case `${userConstants.USER_CALL}_REQUEST`:
             state = {
                 ...state,
@@ -50,6 +52,21 @@ export default (state = intiState, action) => {
                 authenticated: false,
                 authenticating: false,
                 error: action.payload.error
+            }
+            break;
+
+        case `${userConstants.GET_REALTIME_PROBLEMS}_REQUEST`:
+            break;
+        case `${userConstants.GET_REALTIME_PROBLEMS}_SUCCESS`:
+            state = {
+                ...state,
+                chamados: action.payload.chamados
+            }
+            break;
+        case `${userConstants.GET_REALTIME_PROBLEMS}_FAILURE`:
+            state = {
+                ...state,
+                chamados: []
             }
             break;
     }

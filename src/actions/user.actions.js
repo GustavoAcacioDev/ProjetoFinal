@@ -3,41 +3,57 @@ import { firestore } from 'firebase';
 
 export const getRealtimeUsers = (uid) => {
 
-    //console.log('uid', uid)
-
-    return async (dispatch) => {
+    return async dispatch => {
 
         dispatch({ type: `${userConstants.GET_REALTIME_USERS}_REQUEST` });
 
         const db = firestore();
 
-            const unsubscribe = db.collection("users").doc('tipoUsuario').collection('userComum')
-                //.where("uid", "!=", uid)
-                .onSnapshot((querySnapshot) => {
-                    const users = [];
-                    querySnapshot.forEach(function (doc) {
-                        if (doc.data().uid !== uid) {
-                            users.push(doc.data());
-                        }
-                    });
-                    //console.log(users);
-
-                    dispatch({
-                        type: `${userConstants.GET_REALTIME_USERS}_SUCCESS`,
-                        payload: { users }
-                    });
-
+        const unsubscribe = db.collection("users").doc('tipoUsuario').collection('userComum')
+            //.where("uid", "!=", uid)
+            .onSnapshot((querySnapshot) => {
+                const users = [];
+                querySnapshot.forEach(function (doc) {
+                    if (doc.data().uid !== uid) {
+                        users.push(doc.data());
+                    }
                 });
-            return unsubscribe;
-        
+                //console.log(users);
+
+                dispatch({
+                    type: `${userConstants.GET_REALTIME_USERS}_SUCCESS`,
+                    payload: { users }
+                });
+
+            });
+        return unsubscribe;
+
     }
 
 }
 
+export const getRealtimeChamados = () => {
+    return async (dispatch) => {
 
+        dispatch({ type: `${userConstants.GET_REALTIME_PROBLEMS}_REQUEST` });
 
+        const db = firestore();
 
-
+        const unsubscribe = db.collection("Chamados")
+            .onSnapshot((querySnapshot) => {
+                var chamados = [];
+                querySnapshot.forEach(function (doc) {
+                    chamados.push(doc.data())
+                });
+                dispatch({
+                    type: `${userConstants.GET_REALTIME_PROBLEMS}_SUCCESS`,
+                    payload: { chamados }
+                });
+            });
+            
+        return unsubscribe;
+    }
+}
 
 export const updateMessage = (msgObj) => {
     return async dispatch => {
