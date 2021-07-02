@@ -3,9 +3,7 @@
   padding: 0;
 }
 
-.ContainerHome1 {
-  overflow: scroll;
-}
+
 
 @media (max-width: 900px) {
   .textinho {

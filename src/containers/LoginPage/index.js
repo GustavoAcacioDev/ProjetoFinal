@@ -109,7 +109,7 @@ const LoginPage = (props) => {
                 onChange={(e) => setPassword(e.target.value)} required style={{ border: "white", background: "transparent", boxShadow: "0 0 0 0", outline: "0", bmarginBottom: "6%", border: "white", borderBottom: "black 0.2px solid", marginBottom: '4%' }} />
             </div>
           </div>
-
+          
           <Link to="/redefinir" style={{ color: "orange", marginLeft: "63%", }}><a>Esqueci minha senha</a></Link>
           <div classname="Botaologin" style={{ display: "flex", }}>
 

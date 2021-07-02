@@ -41,7 +41,7 @@ function App() {
           <Route path='/home' component={Home} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signupCliente" component={RegisterClientePage} />
-          <PrivateRoute path="/signup" component={RegisterPage} />
+          <Route path="/signup" component={RegisterPage} />
           <Route path="/redefinir" component={RedefinirSenha} />
           <PrivateRoute path="/novaSenha" component={NovaSenha} />
         </Router>

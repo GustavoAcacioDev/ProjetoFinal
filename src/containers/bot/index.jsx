@@ -12,7 +12,7 @@ const config = {
   floating: true,
   placeholder: 'Digite sua Mensagem...',
   userDelay: 0,
-
+  
 };
 
 const theme = {

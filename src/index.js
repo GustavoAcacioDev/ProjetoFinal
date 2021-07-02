@@ -7,8 +7,6 @@ import firebase from 'firebase';
 import { Provider } from 'react-redux';
 import store from './store';
 import 'antd/dist/antd.css';
-import Chat2 from './screens/atendimento2/Chat2';
-import Chat4 from './screens/atendimento4/Chat4';
 
 import "firebase/auth";
 import "firebase/firestore";

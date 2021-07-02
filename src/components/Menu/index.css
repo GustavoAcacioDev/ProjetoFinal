@@ -5,6 +5,8 @@
     font-family: 'Times New Roman', Times, serif;
 } */
 
+
+
 .cor {
     color: #FF8C00;
     font-size: 45px;
@@ -41,7 +43,6 @@
 
 body {
     background-color: #f5f6f8;
-    overflow: hidden;
     margin: 0;
     padding: 0;
     list-style: none;

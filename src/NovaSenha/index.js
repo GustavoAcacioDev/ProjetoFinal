@@ -62,7 +62,7 @@ const NovaSenha = () => {
                     </Form.Group>
 
                     <div >
-                        <Button className='botao-enviar' forcePush="/login" type='submit' style={{cursor: 'pointer'}}>Alterar Senha</Button>
+                        <Button className='botao-enviar' type='submit' style={{cursor: 'pointer'}}>Alterar Senha</Button>
                     </div>
 
 

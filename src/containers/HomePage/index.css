@@ -1,10 +1,3 @@
-.container {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 60px);
-    overflow: hidden;
-}
 
 .listOfUsers {
     width: 30%;
@@ -19,7 +12,7 @@
     overflow-x: hidden;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid rgba(0, 0, 0, 0.486);
+    ;
 }
 
 .chatHeader {
@@ -134,13 +127,15 @@
 
 .ContainerPrincipal {
     display: flex;
-    width: 1920px;
+    width: 100%;
     height: 1080px;
+    overflow-x: hidden;
 }
 
 .Container1 {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .Container2 {
@@ -279,6 +274,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.486);
 }
 
 .BlockInformacao {

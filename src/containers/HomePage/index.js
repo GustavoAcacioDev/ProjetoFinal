@@ -3,9 +3,7 @@ import './../HomePage/index.css';
 import Menu from '../../components/Menu/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { ChatSquareDots, PersonBoundingBox, PersonCircle, Cursor } from 'react-bootstrap-icons';
-import { getRealtimeUsers, updateMessage, getRealtimeConversations, getRealtimeChamados } from '../../actions';
-
-import Chat3 from '../../screens/atendimento3/Chat3';
+import { getRealtimeUsers, updateMessage, getRealtimeConversations, getRealtimeChamados, deleteUser } from '../../actions';
 
 const User = (props) => {
 
@@ -18,7 +16,7 @@ const User = (props) => {
         <PersonCircle className="pic1" size={40} />
       </div>
       <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', margin: '0 10px' }}>
-        <span style={{ fontWeight: 500 }}>{user.nome}</span>
+        <span style={{ fontWeight: 500 }}>{user.nome} </span>
         <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}></span>
       </div>
     </div>
@@ -71,17 +69,15 @@ const HomePage = (props) => {
 
 
   const initChat = (user) => {
-
     setChatStarted(true)
     setChatUser(`${user.nome}`)
     setCpf(`${user.cpf}`)
+    setProblema(`${user.problema}`)
     setUserUid(user.uid);
 
-    console.log(user);
-
     dispatch(getRealtimeConversations({ uid_1: auth.uid, uid_2: user.uid }));
-
   }
+  
   
   
 
@@ -105,8 +101,9 @@ const HomePage = (props) => {
 
   }
 
-  console.log(user)
-  return (
+  
+
+ return (
 
     <div className="ContainerPrincipal" >
 
@@ -134,6 +131,7 @@ const HomePage = (props) => {
                         onClick={initChat}
                         key={user.uid}
                         user={user}
+                        
                       />
 
 
@@ -142,7 +140,7 @@ const HomePage = (props) => {
               }
             </div>
           </div>
-          {/*Chat*/}
+          
           <div className="ChatCentral">
             <div className="chatArea">
 
@@ -181,7 +179,7 @@ const HomePage = (props) => {
                 </div> : null
             }
           </div>
-          {/* Informações*/}
+          
           <div className="Container3">
             <div className="BlockInformacao">
               {
@@ -196,6 +194,13 @@ const HomePage = (props) => {
               }
               {
                 chatStarted ? <div className="info"> CPF: {cpf} </div> : null
+              }
+              {
+                chatStarted ? <div className="info"> Problema: {problema} </div> : null
+              }
+
+              {
+                chatStarted ? <div className="info"> <button style={{ width: '250px', borderRadius: '6px', fontSize: '20px', border: 'none', boxShadow: '0px 0px 2px 1px #FF8C00', background: 'transparent', backgroundColor: '#FF8C00', color: 'white', fontFamily: 'Arial, Helvetica, sans-serif', border: 'none', cursor: 'pointer', marginLeft: '10px'}}  onClick={() => {dispatch(deleteUser(userUid))}} > Finalizar Chamado </button></div> : null
               }
             </div>
           </div>

@@ -1,18 +1,18 @@
-.paiCadastro{
+/* .pai2{
     display: flex; 
     justify-Content: space-between;
      height: 100vh;
 }
 
 
-.containerCadastro{
+.container2{
     width: 100vw; 
     display: flex; 
     align-Items: center;
     justify-content: center;
 }
 
-.formularioCadastro{
+.formulario2{
     width: 40vw;
     height: 80vh;
     margin: auto;
@@ -27,19 +27,19 @@
     box-shadow: 0px 0px 20px 9px #8d8f8f79; 
 }
 
-.tituloCadastro{
+.titulo2{
     font-Family: Radley; 
     font-Size: 60px; 
     margin : auto;
     font-family: 'Quicksand', sans-serif;
 }
 
-.botaoCadastro{
+.botao2{
     display: flex; 
     justify-Content: center;
 }
 
-.botao-cadastrarCadastro{
+.botao-cadastrar{
         height: 50px;
         width: 250px;
         font-Size: 30px;
@@ -51,7 +51,7 @@
         border-Color: #FF8C00;
 }
 
-.nomeCadastro{
+.nome{
     height: 3em;
    width: 20vw;
    border: none;
@@ -63,7 +63,7 @@
    font-size: 14px;
 }
 
-.emailCadastro{
+.email2{
    height: 3em;
    width: 20vw;
    border: none;
@@ -75,7 +75,7 @@
    font-size: 14px;
 }
 
-.senhaCadastro{
+.senha2{
    height: 3em;
    width: 20vw;
    border: none;
@@ -87,7 +87,7 @@
    font-size: 14px;
 }
 
-.telefoneCadastro{
+.telefone{
    height: 3em;
    width: 20vw;
    border: none;
@@ -99,7 +99,7 @@
    font-size: 14px;
 }
 
-.especificacaoCadastro{
+.especificacao{
    height: 3em;
    width: 20vw;
    border: none;
@@ -111,7 +111,7 @@
    font-size: 14px;
 }
 
-.cpfCadastro{
+.cpf{
    height: 3em;
    width: 20vw;
    border: none;
@@ -122,7 +122,7 @@
    outline: none;
    font-size: 14px;
 }
-.horaInicioCadastro{
+.horaInicio{
    height: 3em;
    width: 20vw;
    border: none;
@@ -133,7 +133,7 @@
    outline: none;
    font-size: 14px;
 }
-.horaTerminoCadastro{
+.horaTermino{
    height: 3em;
    width: 20vw;
    border: none;
@@ -145,6 +145,116 @@
    font-size: 14px;
 }
 
-.conjuntoCadastro{
+.conjunto1{
     display: flex;
+}
+
+.conjunto2{
+    display: flex;
+}
+
+.conjunto3{
+    display: flex;
+}
+.conjunto4{
+    display: flex;
+} */
+
+
+
+
+.FundoCadastro{
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   filter: grayscale(100%);
+}
+
+.TudoCadastro{
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+
+}
+
+.paiCadastro{
+   position: relative;
+   width: 22vw;
+   height: 80vh;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   border-radius: 40px;
+   padding-left: 50px;
+   padding-right: 50px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   background-color: white;
+   margin-top: 2%;
+ 
+}
+
+
+.tituloCadastro{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   font-family: 'Libre Baskerville', serif, bold;
+   margin-bottom: 5%;
+ }
+
+.formNomeCadastro{
+   letter-spacing: 1px;
+   background: transparent;
+   border-bottom:rgba(0, 0, 0, 0.445) 0.2px solid; 
+   outline: none;
+   font-size: 14px;
+   height: 50px;
+   margin-top: 30%;
+}
+
+.nomeCadastro, .nomeCadastro2, .emailCadastro, .senhaCadastro, .CPFCadastro, .telefoneCadastro, .cepCadastro, .especificacaoCadastro, .horaInicioC, .horaTerminoC{
+   margin-top: 5%;
+   width: 20vw;
+   height: 100%;
+   padding: 0px 0px 0px 1px;
+   letter-spacing: 1px;
+   background: transparent;
+   outline: none;
+   font-size: 14px;
+   margin-left: 2%;
+   height: 4vh;
+   border: none;
+
+}
+
+.formSegundoCadastro, .formEmailCadastro, .SenhaCadastro, .cpfCadastro, .TelefoneCadastro, .CEPCadastro, .EspecificacaoCadastro, .HorarioICadastro, .HorarioTCadastro{
+   letter-spacing: 1px;
+   background: transparent;
+   border-bottom:rgba(0, 0, 0, 0.445) 0.2px solid; 
+   outline: none;
+   font-size: 14px;
+   height: 50px;
+   margin-top: -2%;
+}
+
+.botao-cadastrar{
+   height: 5vh ;
+   width:  22vw ;
+   font-size: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: #FF8C00;
+   color: white;
+   border-radius: 6px;
+   border : none;
+   box-shadow: 0px 0px 2px 1px #FF8C00;
+   margin-top: 9.6%;
 }

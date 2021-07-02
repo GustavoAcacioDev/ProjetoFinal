@@ -357,17 +357,15 @@ export const changePassword = (newPassword) => {
     }
 }
 
-export const deleteChamado = (chamadoUid) => {
+export const deleteUser = (uid) => {
     return async dispatch => {
         const db = firestore();
 
-        db.collection('Chamados').doc(chamadoUid)
-            .delete()
-            .then(() => {
-                console.log('Chamado Deletado')
-            }).catch((error) => {
-                console.error("Error removing document: ", error);
-            });
+        db.collection('users').doc('tipoUsuario').collection('userComum')
+        .doc(uid)
+        .delete().then(() => {
+            console.log('Usuario deleted');
+        }).catch((error) => {})
 
     }
 }
