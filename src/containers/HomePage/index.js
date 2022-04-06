@@ -8,7 +8,7 @@ import { getRealtimeUsers, updateMessage, getRealtimeConversations, getRealtimeC
 const User = (props) => {
 
 
-   
+
   const { user, onClick } = props;
   return (
     <div onClick={() => onClick(user)} className="displayName">
@@ -54,10 +54,10 @@ const HomePage = (props) => {
 
   }, []);
 
-  
+
 
   //console.log(user);
-  
+
   //componentWillUnmount
   useEffect(() => {
     return () => {
@@ -77,9 +77,9 @@ const HomePage = (props) => {
 
     dispatch(getRealtimeConversations({ uid_1: auth.uid, uid_2: user.uid }));
   }
-  
-  
-  
+
+
+
 
   const submitMessage = (e) => {
 
@@ -101,9 +101,9 @@ const HomePage = (props) => {
 
   }
 
-  
 
- return (
+
+  return (
 
     <div className="ContainerPrincipal" >
 
@@ -131,7 +131,7 @@ const HomePage = (props) => {
                         onClick={initChat}
                         key={user.uid}
                         user={user}
-                        
+
                       />
 
 
@@ -140,46 +140,54 @@ const HomePage = (props) => {
               }
             </div>
           </div>
-          
+
           <div className="ChatCentral">
+            {
+              chatStarted ? <div className="chatHeader">
+                <p>
+                  {
+                    chatStarted ? chatUser : ''
+                  }
+                </p>
+              </div> : null
+            }
             <div className="chatArea">
 
-              <div>
-                {
-                  chatStarted ? <div className="chatHeader">
-                    <p>
-                      {
-                        chatStarted ? chatUser : ''
-                      }
-                    </p>
-                  </div> : null
-                }
-              </div>
+
+              
+
 
 
               {
-                chatStarted ?
-                user.conversations.map(con =>
-                  <div style={{ textAlign: con.user_uid_1 === auth.uid ? 'right' : 'left' }}>
-                    <p className="messageStyle" >{con.message}</p>
-                  </div>): null
+                <div className="chat-area-conversation">
+                  {
+
+                    chatStarted ?
+                      user.conversations.map(con =>
+                        <div style={{ textAlign: con.user_uid_1 === auth.uid ? 'right' : 'left' }}>
+                          <p className="messageStyle" >{con.message}</p>
+                        </div>) : null
+                  }
+                </div>
               }
 
             </div>
-            {
-              chatStarted ?
-                <div className="chatControls" >
-                  <input style={{ width: '80%', height: '50px', fontSize: '30px', border: 'none', outline:'none', backgroundColor: '#f5f6f8'}} value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder=" Escreva sua mensagem..."
-                    type="text"
-                  >
-                  </input>
-                  <button onClick={submitMessage} style={{border: 'none', backgroundColor: '#f5f6f8', cursor: 'pointer'}}><Cursor  className="enviar" color="#FF8C00" size={38}/></button>
-                </div> : null
-            }
+            <div className="Chat-area-controls">
+              {
+                chatStarted ?
+                  <div className="chatControls" >
+                    <input style={{ width: '80%', fontSize: '30px', border: 'none', outline: 'none', backgroundColor: '#f5f6f8', border: '1px solid rgba(0, 0, 0, 0.486)', borderRadius: '10px' }} value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder=" Escreva sua mensagem..."
+                      type="text"
+                    />
+                    
+                    <button onClick={submitMessage} style={{ border: 'none', backgroundColor: '#f5f6f8', cursor: 'pointer', border: '1px solid rgba(0, 0, 0, 0.486)', borderRadius: '10px'  }}><Cursor className="enviar" color="#FF8C00" size={38} /></button>
+                  </div> : null
+              }
+            </div>
           </div>
-          
+
           <div className="Container3">
             <div className="BlockInformacao">
               {
@@ -200,7 +208,7 @@ const HomePage = (props) => {
               }
 
               {
-                chatStarted ? <div className="info"> <button style={{ width: '250px', borderRadius: '6px', fontSize: '20px', border: 'none', boxShadow: '0px 0px 2px 1px #FF8C00', background: 'transparent', backgroundColor: '#FF8C00', color: 'white', fontFamily: 'Arial, Helvetica, sans-serif', border: 'none', cursor: 'pointer', marginLeft: '10px'}}  onClick={() => {dispatch(deleteUser(userUid))}} > Finalizar Chamado </button></div> : null
+                chatStarted ? <div className="info"> <button style={{ width: '250px', borderRadius: '6px', fontSize: '20px', border: 'none', boxShadow: '0px 0px 2px 1px #FF8C00', background: 'transparent', backgroundColor: '#FF8C00', color: 'white', fontFamily: 'Arial, Helvetica, sans-serif', border: 'none', cursor: 'pointer', marginLeft: '10px' }} onClick={() => { dispatch(deleteUser(userUid)) }} > Finalizar Chamado </button></div> : null
               }
             </div>
           </div>

@@ -1,0 +1,52 @@
+*{
+  padding: 0;
+  margin: 0;
+  
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.containerMenu{
+  width: 100vw;
+  height: 8em;
+
+  background-color: #1A2127;
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuItens{
+  width: 80%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.BRQLogo{
+  width: 7em;
+}
+
+.itens{
+  width: 20em;
+  width: 40em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerMenu a{
+  color: white;
+  font-size: 22px;
+  font-family: 'Radley', serif;
+}
+
+.containerMenu a:hover{
+  color: #FF8C00;
+}

@@ -48,105 +48,6 @@ const RegisterPage = (props) => {
   }
 
   return (
-    // <div className="pai2" >
-
-
-    //   <div className="container2" >
-
-    //     <Form onSubmit={registerUser}>
-
-
-    //       <h1 className="titulo2" >Cadastre um Atendente</h1>
-
-    //       <div className="conjunto1" style={{ marginTop: '100px' }}>
-
-    //         <div style={{ marginRight: '20px' }}>
-
-    //           <Form.Group controlId="name">
-    //             <input type="text" className="nome" placeholder="Nome" name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-
-    //         <div>
-
-    //           <Form.Group controlId="secondName">
-    //             <input type="text" className="email2" placeholder="Sobrenome" name='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-
-    //       </div>
-
-    //       <div className="conjunto2">
-    //         <div style={{ marginRight: '20px' }}>
-
-    //           <Form.Group controlId="formBasicEmail">
-    //             <input type="email" className="email2" placeholder="Email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-
-    //         <div>
-
-    //           <Form.Group controlId="password">
-    //             <input type="password" className="senha2" placeholder="Senha" name='senha' value={password} onChange={(e) => setPassword(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-
-
-    //       </div>
-
-    //       <div className="conjunto3">
-    //         <div style={{ marginRight: '20px' }}>
-
-    //           <Form.Group controlId="cpf">
-    //             <input className="cpf" type="text" placeholder="CPF" name='cpf' value={cpf} onChange={(e) => setCpf(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-
-
-
-    //         <div >
-
-    //           <Form.Group controlId="phone">
-    //             <input type="tel" className="telefone" placeholder="Telefone" name='telefone' value={telefone} onChange={(e) => setTel(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-    //       </div>
-
-    //       <div className="conjunto5" style={{ display: 'flex', justifyContent: 'center', }}>
-    //         <div style={{ marginRight: '20px' }}>
-
-    //           <Form.Group controlId="cep">
-    //             <input className="cpf" type="text" placeholder="CEP" name='cpf' value={cep} onChange={(e) => setCep(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-
-    //         <Form.Group controlId="especificacao">
-    //           <input type="text" className="especificacao" placeholder="Especificação" value={especializacao} onChange={(e) => setEspec(e.target.value)} name='especializacao' required />
-    //         </Form.Group>
-    //       </div>
-
-    //       <div className="conjunto4">
-    //         <div style={{ marginRight: '20px' }}>
-    //           <Form.Group controlId="time">
-    //             <input className="horaInicio" type="text" placeholder="Informe o horário de início" name='horarioInicio' value={horarioInicio} onChange={(e) => setInicio(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-    //         <div>
-    //           <Form.Group controlId="cpf">
-    //             <input className="horaTermino" type="text" placeholder="Informe o horário de Término" name='horarioTermino' value={horarioTermino} onChange={(e) => setTermino(e.target.value)} required />
-    //           </Form.Group>
-    //         </div>
-    //       </div>
-
-
-
-    //       <div className="botao2" >
-    //         <button className='botao-cadastrar' type='submit'>Cadastrar</button>
-    //       </div>
-
-    //     </Form>
-    //   </div>
-    // </div>
 
 
     <div className="TudoCadastro">
@@ -161,7 +62,7 @@ const RegisterPage = (props) => {
 
         <Form onSubmit={registerUser} style={{ marginTop: "-2%" }}>
           <h1 className="tituloCadastro">Cadastro</h1>
-          <BootstrapFill className="iconLogin" style={{ display: "flex", margin: "center", marginLeft: "43%" }} className='all' color="black" size={50} />
+          <BootstrapFill className="iconLogin, all" style={{ display: "flex", margin: "center", marginLeft: "43%", color: "black", size:'50' }}   />
 
           <Form.Group controlId="name" className="formNomeCadastro" style={{ display: "flex", alignItems: "center" }}>
             <input type="text" className="nomeCadastro" placeholder="Nome" name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />

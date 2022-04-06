@@ -1,42 +1,34 @@
 import React from 'react';
-import '../../components/menuSamanta/menuSamanta.css'
-import { Navbar, Nav,  } from 'react-bootstrap';
-import Ham from './../hamburger';
+import './menu.css';
+
+//images for website
+import brqLogo from '../../img/logo.png';
+
+const menu = () => {
+
+  return (
 
 
-const menu =() => {
-  
-  return(
-    
-    
-    <Navbar className="banner">
-   
-    <Navbar.Brand href="#home" className="home"  >
-        <img
-        src="https://www.brq.com/images/logo-brq.png"
-        width="140"
-        height="100"
-        className="logo"
-        alt="Logo da BRQ"
-        />
-       
-        <Ham id='botaum'/>
-      
-     <Nav className="links" >
-        <Nav.Link id='menu' style={{textDecoration: '#192026'}} href="#home">Home</Nav.Link>
-        <Nav.Link id='menu' style={{textDecoration: '#192026'}} href="#Quemsomos">Quem somos</Nav.Link>
-        <Nav.Link id='menu' style={{textDecoration: '#192026'}} href="#Servicos">Serviços</Nav.Link>
-        <Nav.Link id='menu' style={{textDecoration: '#192026'}} href="#Integrantes">Integrantes</Nav.Link>
-      </Nav>
-        </Navbar.Brand>
-        
-        
-      
-  </Navbar>
-       
-       )
-       
-       
-      }
-      
-      export default menu;
+    <div className="containerMenu">
+
+      <div className="menuItens">
+
+        <a href="#home"><img className="BRQLogo" src={brqLogo} /></a>
+
+        <div className="itens">
+          <a href="#home">Home</a>
+          <a href="#quemSomos">Quem Somos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#integrantes">Integrantes</a>
+        </div>
+
+      </div>
+
+
+    </div>
+  )
+
+
+}
+
+export default menu;

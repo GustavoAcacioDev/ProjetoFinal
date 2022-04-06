@@ -1,46 +1,34 @@
-import React, {} from 'react';
+import React, { } from 'react';
 import { } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './index.css';
 import { ArrowBarLeft, ChatRight, Person } from 'react-bootstrap-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../actions';
+import { BsPerson} from "react-icons/bs";
+import { BiMessageDetail, BiLogOut } from "react-icons/bi";
 
 const Menu = () => {
 
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
-    
+
     return (
 
 
-        <div className='tt'>
-
-            <nav class="sidebar-navigation">
-
-                <ul>
-
-
-                    <p className="cor">B<br />R<br /> Q </p>
-                    <p className="espa">_______</p>
-
-
-                    <li>
-                        <Link to={'/'}>
-                            <ChatRight color=" #f5f6f8" size={35} />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={'/atendente'} >
-                            <Person color=" #f5f6f8" size={35} />
-                        </Link>
-                    </li>
-
-
-
-                </ul>
-                <ul className="logout">
+        <div className="container-atendente">
+            <aside>
+                <div className="container-brq">
+                    <h1>B</h1>
+                    <h1>R</h1>
+                    <h1>Q</h1>
+                </div>
+                <div className="container-icons">
+                    <a href="/atendente"><BsPerson className="person-icon" /></a>
+                    <a href="/"><BiMessageDetail className="conversation-icon" /> </a>
+                </div>
+                <div className="container-logout">
 
 
 
@@ -49,14 +37,13 @@ const Menu = () => {
 
                             <Link class="tooltip" to={'#'} onClick={() => {
                                 dispatch(logout(auth.uid))
-                            }}><ArrowBarLeft color=" #f5f6f8" size={35} /></Link>
+                            }}><ArrowBarLeft color=" #000" size={35} fill="currentColor" /></Link>
                             : null
                     }
 
 
-                </ul>
-
-            </nav>
+                </div>
+            </aside>
 
         </div>
 
